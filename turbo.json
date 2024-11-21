@@ -1,0 +1,24 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "dangerouslyDisablePackageManagerCheck": true,
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "build:watch": {},
+    "check:exports": {
+      "dependsOn": ["^build"]
+    },
+    "app#watch": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false,
+      "outputs": ["packages/*/build"]
+    }
+  }
+}
