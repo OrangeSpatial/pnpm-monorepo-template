@@ -20,8 +20,8 @@
     "test": "pnpm -r --if-present test",
     "test:unit": "pnpm -r --if-present test:unit",
     "test:integration": "pnpm -r --if-present test:integration",
-    "lint": "eslint . --fix",
-    "format": "prettier --write packages/*/src",
+    "format": "turbo run format",
+    "lint": "turbo run lint",
     "prepare": "is-ci || husky"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
-    "*.{js,ts,mjs,md,json,vue}": "pnpm lint"
+    "*.{js,ts,mjs,md,json,vue}": "eslint --fix"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

@@ -15,13 +15,13 @@
   "exports": {
     ".": {
       "import": {
-        "@jkomyno/source": "./src/index.ts",
+        "@ceti/source": "./src/index.ts",
         "types": "./build/index.d.mts",
         "import": "./build/index.mjs",
         "default": "./build/index.mjs"
       },
       "require": {
-        "@jkomyno/source": "./src/index.ts",
+        "@ceti/source": "./src/index.ts",
         "types": "./build/index.d.ts",
         "import": "./build/index.js",
         "default": "./build/index.js"
@@ -33,8 +33,11 @@
   "scripts": {
     "clean": "rimraf build .turbo",
     "build": "tsup ./src/index.ts --tsconfig ./tsconfig.build.json --config ../../tsup.config.ts",
+    "dev": "pnpm build --watch",
     "build:watch": "pnpm build --watch",
     "check:exports": "attw --pack .",
+    "format": "prettier --write ./src",
+    "lint": "eslint . --fix",
     "test": "vitest --workspace ../../vitest.workspace.ts run",
     "test:unit": "vitest --workspace ../../vitest.workspace.ts --project unit run",
     "test:integration": "vitest --workspace ../../vitest.workspace.ts --project integration run"

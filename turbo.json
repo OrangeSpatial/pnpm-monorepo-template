@@ -6,6 +6,8 @@
       "dependsOn": ["^build"]
     },
     "build:watch": {},
+    "format": {},
+    "lint": {},
     "check:exports": {
       "dependsOn": ["^build"]
     },
